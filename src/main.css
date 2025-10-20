@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.menue_bar{
+    border-bottom: 3px solid #000;
+}
