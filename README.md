@@ -1,25 +1,28 @@
-# Getting Started with Create React App
+# 📝 Todo List App (react版)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+このwebアプリは，reactを学習後，TodoアプリのJavescript版(https://github.com/wataru-creato/Todo-app)を基に再度作成したものである．
+おもにReactをメインにJavesctiptを使用した．
+localStorageは引き続き，フレームワークとしてTailwindCSSを使用して学ぶことができた．
 
-## Available Scripts
+## 使用技術
+- JavaScript (ES6)
+- React (関数コンポーネント、Hooks)
+- CSS / TailwindCSS
+- ブラウザの LocalStorage を使用したデータ保存
 
-In the project directory, you can run:
+## ✨ 主な機能
 
-### `npm start`
+- ✅ タスクの追加  
+- ❌ タスクの削除  
+- ✔️ 完了済みタスクのチェック  
+- 💾 localStorage による保存  
+- 🗨  色の状態ごとにタスクを絞り込む
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 デモ
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+# Todoリスト開発で学んだこと
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
