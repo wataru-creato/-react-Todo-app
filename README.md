@@ -1,8 +1,9 @@
 # 📝 Todo List App (react版)
 
-このwebアプリは、Reactを学習後，TodoアプリのJavescript版(https://github.com/wataru-creato/Todo-app)を基に再度作成したものです。
-タスクの追加、状態管理（未着手・進行中・完了）、削除などの基本操作を通してREACTの状態管理を学びました。
-フレームワークとして新しくTailwindCSSを使用して技術を学ぶことができました。
+このWebアプリは、Reactを学習後、[TodoアプリのJavaScript版](https://github.com/wataru-creato/Todo-app)を基に再度作成したものです。
+タスクの追加、状態管理（未着手・進行中・完了）、削除などの基本操作を通してReactの状態管理を学びました。
+フレームワークとして新しくTailwind CSSを使用して技術を学ぶことができました。
+
 
 ---
 
