@@ -1,73 +1,80 @@
 # 📝 Todo List App (react版)
 
-このwebアプリは，reactを学習後，TodoアプリのJavescript版(https://github.com/wataru-creato/Todo-app)を基に再度作成したものである．
-おもにReactをメインにJavesctiptを使用した．
-localStorageは引き続き，フレームワークとしてTailwindCSSを使用して学ぶことができた．
+このwebアプリは、Reactを学習後，TodoアプリのJavescript版(https://github.com/wataru-creato/Todo-app)を基に再度作成したものです。
+タスクの追加、状態管理（未着手・進行中・完了）、削除などの基本操作を通してREACTの状態管理を学びました。
+フレームワークとして新しくTailwindCSSを使用して技術を学ぶことができました。
+
+---
 
 ## 使用技術
 - JavaScript (ES6)
-- React (関数コンポーネント、Hooks)
+- React (useState,useEffect)
 - CSS / TailwindCSS
 - ブラウザの LocalStorage を使用したデータ保存
+
+---
 
 ## ✨ 主な機能
 
 - ✅ タスクの追加  
 - ❌ タスクの削除  
-- ✔️ 完了済みタスクのチェック  
+- ✔️ 完了済みタスクのチェック
+- 🔍 ステータス変更（重要☆/未着手/進行中/完了）
+- 🌇　完了タスクの表示と完了リストの一括削除
 - 💾 localStorage による保存  
-- 🗨  色の状態ごとにタスクを絞り込む
+
+
+---
 
 ## 🚀 デモ
 
+公開URL:(https://wataru-creato.github.io/-REACT-Todo-app/)
 
+![基本画面](pic1.png)
+- 基本的な画面，タスクを追加する，タスクを完了する（✔ボタン），タスクの完了リストをすべて消す，タスクの色を変える，リセットする（すべて消す）ボタンが存在する
 
-# Todoリスト開発で学んだこと
+![アラート表示](pic2.png)
+- タスクの✔ボタンを押した時にはアラートを表示している
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![完了タスクの追加](pic3.png)
+- ✔ボタンが押されたらタスク一覧から完了リストに移動する
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![状態の変更](pic4.png)
+- 右の色のついたボタンでそれぞれ状態を変えることができる
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 開発で学んだこと
 
-### `npm run eject`
+- Reactの構成理解
+親コンポーネントがデータや処理を管理し、子コンポーネントが見た目（UI）を担当するというReactの考え方を理解しました。
+処理と見た目を分けて考えることで、コードの整理や保守性が高まることを実感しました。
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- useStateを使った状態管理
+JavaScriptのように直接中身を変更するのではなく、新しい配列を生成して置き換える必要があるという仕組みを理解しました。
+状態を安全に更新するための考え方（イミュータブルな更新）を身につけることができました。
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 状態の種類ごとにuseStateを分ける重要性
+form入力用とリスト保存用の状態を別々に管理することで、処理の流れを明確にし、不要な再レンダリングを防げるようになりました。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- filterを使った削除の仕組み
+「削除したように見せる」処理として、filterを使って特定のタスクを除外する方法を理解しました。
+ただ削除するのではなく、データをどう見せるかという発想が持てるようになりました。
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Tailwind CSSによるUI改善
+Bootstrapを使っていた頃よりも柔軟にデザインを調整でき、構造を意識したUI設計ができるようになりました。
 
-## Learn More
+- 理解の仕方の変化
+最初は「なぜそう書くのか」が曖昧でしたが、わからない箇所で立ち止まり、
+「何がわかっていないのか」を言葉にして整理するようにしました。
+その結果、Reactがどのように動いているのかを、自分の言葉で説明できるようになりました。
+## 今後の課題
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Appコンポーネント内にすべての処理が集中しているため、機能ごとにコンポーネントを分けるとより見通しが良くなる。  
+- Tailwind CSSのクラスが多くなっているため、共通部分を整理して読みやすくする。  
+- 状態（status / done）の扱いを整理し、今後の拡張に対応しやすい構造にする。  
+- 関数やロジックのまとまりを意識して整理し、処理の流れをより明確にする。
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## まとめ
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ 今回のTodoリストを通してReactは書き方ではなく考え方で書くという感覚をつかむことが出来ました。
+ わからない部分があったら言語化して、納得するまで言語化することを心掛けて勉強し作成しました。
+ 今後は外部APIやバックエンドの知識をつけてよりフルスタック寄りのアプリが作れるように学習していきます。

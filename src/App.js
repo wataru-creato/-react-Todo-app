@@ -123,7 +123,7 @@ useEffect(()=>{
    return(
       <div>
         <b><h1 className="menue_bar text-[30px]">Todoリスト（react版）</h1></b>
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-4">
         <div className="bg-gray-200 border-2 border-[#333] px-3 py-2 rounded-lg m-1 flex justify-center items-center w-fit">
       年月日：<input type="date" name="day" placeholder="日付を入力してください" onChange={handleChange} value={form.day} className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"></input>
       開始時間：<input type="time" name="start_time" placeholder="開始時間を入力してください" onChange={handleChange} value={form.start_time} className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"></input>
@@ -132,6 +132,12 @@ useEffect(()=>{
       <button className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={handleAdd_text}>追加</button>
       <button onClick={resetbutton} className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >リセット</button>
       </div>
+      {/* <select id="filter">
+        <option>絞り込み</option>
+        <option>☆</option>
+        <option>未着手</option>
+        <option>進行中</option>
+      </select> */}
         </div>
           <div>
             
@@ -155,8 +161,8 @@ useEffect(()=>{
               <button onClick={()=>handleDone(i.id)} className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
               <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent flex justify-center items-center">✔</span></button>
               {/*ここのクラス名で左右の設定を行う */}
-              <div className="">
-              <span class="items-text">日付：{i.day}</span><span>開始時間：{i.start_time}</span>終了時刻：{i.end_time}<span>タスク：{i.text}</span>
+              <div className="flex items-center space-x-6">
+              <span>日付：{i.day}</span><span>開始時間：{i.start_time}</span><span>終了時刻：{i.end_time}</span><span>タスク：{i.text}</span>
               </div>
               </div>
               <div className="flex space-x-2 ml-auto">
@@ -168,12 +174,14 @@ useEffect(()=>{
             </div>
               </li>
             ))}
-            <span className="flex items-center space-x-4"><h1 className="bg-green-200 border-2 border-[#333] px-3 py-2 rounded-lg m-1 w-fit">完了リスト</h1><button onClick={doneListDelet} className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 items-center">完了リスト削除</button></span>
+            <span className="flex items-center space-x-4"><h1 className="bg-green-200 border-2 border-[#333] px-3 py-2 rounded-lg m-1 w-fit text-base py-2">完了リスト</h1><button onClick={doneListDelet} className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 items-center text-base py-2">完了リスト削除</button></span>
+            <ul className="list-disc pl-5">
             {doneList.filter((t)=>t.done).map((i)=>(
-              <div className="flex items-center space-x-4">
-                <span>日付：{i.day}</span><span>開始時間：{i.start_time}</span>終了時刻：{i.end_time}<span>タスク：{i.text}</span></div>
+              <li className="flex items-center space-x-4">  
+                    <span>日付：{i.day}</span><span>開始時間：{i.start_time}</span><span>終了時刻：{i.end_time}</span><span>タスク：{i.text}</span>
+              </li>
             ))}
-             
+             </ul>
           </ul>
       </div>  
    );
